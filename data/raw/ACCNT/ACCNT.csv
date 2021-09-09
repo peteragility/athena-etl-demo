@@ -1,0 +1,5 @@
+Accnt_Num	Cust_Num	Accnt_Cretn_Date	Accnt_Expiry_Date	Pay_Meth_Cd
+1011	101	8/1/2021	12/31/2999	A
+2011	201	8/2/2021	12/31/2999	M
+3011	301	8/3/2021	12/31/2999	C
+3012	301	8/4/2021	12/31/2999	C
