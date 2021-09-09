@@ -27,7 +27,7 @@ After the Cloudformation stack run successfully, you will the below resources cr
 5. Now goto "Athena" in AWS Console, switch the workgroup to the workgroup named "athena-demo-workgroup-*", you will find all the raw data tables AND two curated tables in the table list on the left:
    - demo_order_table (partition by cretn_year and cretn_month)
    - demo_call_table (partition by start_year, start_month, start_day)
-6. Curated table data are stored under the S3 bucket's curated/ folder, you can have a look and see how partitioned table data is stored in S3. The curated table's data is in columnar file format: Parquet, and is compressed by SNAPPY. The data partitioning, columnar file format and compression are critical for the best performance of SQL querying in Athena. For more tips in Athena performance tuning, can refer to this [AWS Blog](https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/).
+6. Curated table data are stored under the S3 bucket's curated/ folder, you can have a look and see how partitioned table data is stored in S3. The curated table's data is in columnar Parquet file format with SNAPPY compression. The data partitioning, columnar Parquet format and compression are critical for the best performance of SQL processing in Athena. For more tips in Athena performance tuning, can refer to this [AWS Blog](https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/).
 7. You can now execute any SQL queries in the Athena console on the raw or curated tables, you can try any SQL queries Athena is a serverless Presto engine on top of Amazon S3, you can refer to the following docs for SQL and datetime conversion syntax:
    - [SQL Reference for Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/ddl-sql-reference.html)
    - [Date and Time Functions and Operators on Presto](https://prestodb.io/docs/current/functions/datetime.html)
@@ -77,5 +77,6 @@ After the Cloudformation stack run successfully, you will the below resources cr
   ```
 
 ## Next steps?
+- Read this [AWS Blog](https://aws.amazon.com/blogs/big-data/extract-transform-and-load-data-into-s3-data-lake-using-ctas-and-insert-into-statements-in-amazon-athena/) on how to perform ETL operations using CTAS (Create Table As Select) and INSERT INTO statements in Athena.
 - Run a self paced [Athena workshop](https://athena-in-action.workshop.aws/20-howtostart/201-self-paced.html).
 - Athena is one of the tools to handle SQL query/ETL on S3's data lake, to learn more on other AWS services like Amazon Redshift, Amazon EMR, can follow [this workshop](https://intro-to-analytics-on-aws.workshop.aws/en/lab-guide/ingest.html).
