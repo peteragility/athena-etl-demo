@@ -1,15 +1,15 @@
 # AWS Glue/Athena Demo
 > This demo setup AWS Step Functions to orchestrate a sample ETL workflow using AWS Glue and Athena.
 
-## The ETL Workflow (Flow Graph from Step Functions)
+## The ETL workflow (from Step Functions)
 
 ![](https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/diagram/athena-step-functions.png)
 
-## To Deploy the Demo Stack into your AWS Account
-- To deploy the Cloudformation stack to AWS Hong Kong region, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-workflow.yaml). (**For new AWS account you need to enable Hong Kong region before it can be used, for detail please refer to this [doc](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable).**)
-- To deploy the Cloudformation stack to AWS Singapore reigon, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-workflow.yaml).
+## To deploy this demo stack into your AWS account
+- To deploy the Cloudformation stack to AWS Hong Kong region, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-flow.yaml). (**For new AWS account you need to enable Hong Kong region before it can be used, for detail please refer to this [doc](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable).**)
+- To deploy the Cloudformation stack to AWS Singapore reigon, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-flow.yaml).
 
-## What AWS resources are deployed in the Stack?
+## What AWS resources are deployed in this stack?
 After the Cloudformation stack completed successfully, you can look around your AWS account and will find various resources created:
 - An **Amazon S3** bucket prefixed "athena-demo-" is created. Raw data and curated data are stored in this bucket.
 - Two **AWS Glue** crawlers are created, one for csv data and one for json data. Crawler will detect the schema/metadata of the data files stored in Glue metadat store (compatible to Hive metadata store). Athena, Redshift and EMR can then leverage this metadata for query processing.
@@ -72,6 +72,6 @@ After the Cloudformation stack completed successfully, you can look around your 
   and date_parse(a.start_time,'%Y%m%d %H:%i:%s') < date_parse(b.end_datetime,'%Y%m%d %H:%i:%s')
   ```
 
-## Next Steps?
+## Next steps?
 - Run a self paced Athena workshop yourself via this [online workshop](https://athena-in-action.workshop.aws/20-howtostart/201-self-paced.html).
 - Athena is one of the tools to handle SQL query/ETL on S3's data lake, to learn more on other services like Amazon Redshift warehouse, Amazon EMR, can follow [this workshop](https://intro-to-analytics-on-aws.workshop.aws/en/lab-guide/ingest.html).
