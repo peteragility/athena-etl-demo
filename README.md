@@ -6,8 +6,8 @@
 ![](https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/diagram/athena-step-functions.png)
 
 ## To deploy this demo stack into your AWS account
-- To deploy the Cloudformation stack to **AWS Hong Kong region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-flow.yaml). (**For new AWS account you need to enable Hong Kong region before it can be used, for detail please refer to this [doc](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable).**)
-- To deploy the Cloudformation stack to **AWS Singapore region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/athena-ctas-flow.yaml).
+- To deploy the Cloudformation stack to **AWS Hong Kong region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://hkt-aws-quick-start.s3.ap-east-1.amazonaws.com/athena-etl-demo/athena-ctas-flow.yaml). (**For new AWS account you need to enable Hong Kong region before it can be used, for detail please refer to this [doc](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable).**)
+- To deploy the Cloudformation stack to **AWS Singapore region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://hkt-aws-quick-start.s3.ap-east-1.amazonaws.com/athena-etl-demo/athena-ctas-flow.yaml).
 
 ## What AWS resources are deployed in this stack?
 After the Cloudformation stack completed successfully, you can look around your AWS account and will find various resources created:
