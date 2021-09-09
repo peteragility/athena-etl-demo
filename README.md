@@ -6,6 +6,7 @@
 ![](https://raw.githubusercontent.com/peteragility/athena-etl-demo/master/diagram/athena-step-functions.png)
 
 ## To deploy this demo Cloudformation stack into your AWS account
+> Just click next for every step in Cloudformation stack deployment:
 - To deploy the Cloudformation stack to **AWS Singapore region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://hkt-aws-quick-start.s3.ap-east-1.amazonaws.com/athena-etl-demo/athena-ctas-flow.yaml).
 - To deploy the Cloudformation stack to **AWS Hong Kong region**, click [here](https://console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/new?stackName=athena-etl-demo-stack&templateURL=https://hkt-aws-quick-start.s3.ap-east-1.amazonaws.com/athena-etl-demo/athena-ctas-flow.yaml). (**For new AWS account you need to enable Hong Kong region before it can be used, for detail please refer to this [doc](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable).**)
 
@@ -35,9 +36,9 @@ After the Cloudformation stack run successfully, you will the below resources cr
 ## The Athena's SQL queries that actually run in the ETL flow
 - For demo_order_table:
   ```sql
-  CREATE table demo_order_data
+  CREATE table demo_order_table
   WITH (format='PARQUET',parquet_compression='SNAPPY', partitioned_by=array['cretn_year','cretn_month'],
-  external_location = 's3://athena-demo-etl-xxx/curated/demo_order_data/')
+  external_location = 's3://athena-demo-etl-xxx/curated/demo_order_table/')
   AS
   select a.order_id, a.cust_num, a.accnt_num, a.subr_num, a.mob_num, a.order_type_cd, a.order_stat, a.shop_num, 
   a.salman_num, a.cretn_date, a.completion_date, a.serv_req_date, a.cancellation_date, b.order_sub_id, b.order_action, 
